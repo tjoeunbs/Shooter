@@ -9,6 +9,14 @@ public class Bullet0 : MonoBehaviour, IWeapon
 
     }
 
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Border")
+        {
+            Destroy(gameObject);
+        }
+    }
+
     public void Shoot(GameObject obj, GameObject player)
     {
         GameObject goBullet0 = Instantiate(obj);
